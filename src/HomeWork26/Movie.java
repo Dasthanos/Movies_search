@@ -1,5 +1,6 @@
 package HomeWork26;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Movie {
@@ -7,6 +8,16 @@ public class Movie {
     private int year;
     private String description;
     private Director director;
+
+    public static List<Movie> searchTitile(List<Movie> movies, String query){
+        List<Movie> result = new ArrayList<>();
+        for (Movie movie : movies){
+            if(movie.getName().toLowerCase().contains(query.toLowerCase())){
+                result.add(movie);
+            }
+        }
+        return result;
+    }
 
     public String getName() {
         return name;
@@ -40,6 +51,8 @@ public class Movie {
                 ", cast=" + cast +
                 '}';
     }
+
+
 
 
 }
