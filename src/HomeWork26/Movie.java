@@ -3,7 +3,7 @@ package HomeWork26;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Movie {
+public class Movie implements Comparable<Movie>{
     private String name;
     private int year;
     private String description;
@@ -53,6 +53,8 @@ public class Movie {
     }
 
 
-
-
+    @Override
+    public int compareTo(Movie o) {
+        return getName().compareTo(o.name);
+    }
 }
